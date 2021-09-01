@@ -5,7 +5,7 @@ const authorization = require("../authorization/authorization");
 router.post("/register", register);
 router.post("/login", login);
 router.get("/teste", authorization, (req, res, next) => {
-  res.json({ title: "title", data: "data you cannot access" });
+  res.send(`<h1>Hello ${req.user._id}</h1>`);
 });
 
 module.exports = router;
